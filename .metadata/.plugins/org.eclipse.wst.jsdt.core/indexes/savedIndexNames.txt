@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\Flo\Documents\_Cours\REST API\API_REST_JAVA\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2443072137.index
+3789719656.index
+2237087264.index
+3149656086.index
+3417190022.index
+2467672884.index

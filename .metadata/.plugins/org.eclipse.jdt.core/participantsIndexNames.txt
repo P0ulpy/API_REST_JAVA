@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+C:\Users\Flo\Documents\_Cours\REST API\API_REST_JAVA\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2492775506.index
+\api_rest\src\main\java
+C:\Users\Flo\Documents\_Cours\REST API\API_REST_JAVA\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\64974067.index
+\api\src\main\java

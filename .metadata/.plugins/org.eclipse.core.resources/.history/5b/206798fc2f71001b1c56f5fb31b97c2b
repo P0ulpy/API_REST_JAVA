@@ -1,0 +1,38 @@
+package api.api_rest;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class BDD {
+    //Permet de ne pas reecrire les informations pour la reconnection a chaque requete dans le myressource.java
+
+    private static Connection connection;
+
+    public static Connection getConnection()
+    {
+        if (connection != null)
+        {
+            return connection;
+        }
+
+        try
+        {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection(
+                "jdbc:mysql://127.0.0.1:8889/api_rest?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC",
+                "root", // Nom d'utlisateur 
+                "root" // Mot de passe
+            );
+
+            connection = con;
+
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+        }
+
+        return connection;
+    }
+
+}
