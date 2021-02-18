@@ -1,0 +1,26 @@
+package api.api_rest.ClientsManagement;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+
+public class Client {
+
+    public int id;
+    public String nom;
+    public String prenom;
+    public String telephone;
+
+    Client(ResultSet resultSet) throws SQLException
+    {
+        this.id = resultSet.getInt("id");
+        this.nom = resultSet.getString("nom");
+        this.prenom = resultSet.getString("prenom");
+        this.telephone = resultSet.getString("telephone");
+    }
+
+    public String toJSONstring()
+    {
+        return "{ id:" + this.id + ", nom:\"" + this.nom + "\", prenom:\"" + this.prenom + "\", telephone:\"" + this.telephone + "\"}";
+    }
+}

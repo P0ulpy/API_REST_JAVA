@@ -1,0 +1,62 @@
+package api.api_rest.ClientsManagement;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+public class BDD {
+
+    private static Connection connection;
+    public static Connection getConnection()
+    {
+        if (connection != null)
+        {
+            return connection;
+        }
+
+        try
+        {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/api_rest_php?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC",
+                "root", // Nom d'utlisateur 
+                "" // Mot de passe
+            );
+
+            connection = con;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+        }
+
+        return connection;
+    }
+
+    public static List<Client> getClients()
+    {
+        try {
+			Connection connection = BDD.getConnection();
+			
+			Statement statement = connection.createStatement();
+			ResultSet result = statement.executeQuery("SELECT * FROM client");
+            
+            List<Client> clients = new ArrayList<Client>(); 
+
+            while(result.next())
+            {
+                clients.add(new Client(result));
+            }
+
+            return clients;
+		}
+		catch(Exception exception)
+		{
+			System.out.println(exception.getMessage());
+            return null;
+		}
+    }
+}

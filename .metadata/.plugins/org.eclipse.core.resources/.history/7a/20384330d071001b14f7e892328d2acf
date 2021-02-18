@@ -1,0 +1,28 @@
+package api.api_rest;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path("/")
+public class Routes {
+
+    @GET
+    @Path("/clients")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String clients() {
+        
+        return "{a : 10}";
+    }
+
+    @GET
+    @Path("/client/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String client(@PathParam("id") int id) {
+        
+        return "{a : 10}" + id;
+
+        //
+    }
+}

@@ -1,0 +1,51 @@
+package api.api_rest.ClientsManagement.copy;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class ClientsManager {
+    
+	public static String getClients()
+	{
+		Client[] clients = BDD.getClients();
+		
+		String jsonString = "[";
+
+		for(Client client : clients)
+		{
+			jsonString += client.toJSONstring();
+		}
+
+		jsonString += "]";
+
+		return jsonString;
+	}
+
+
+
+
+
+    String a()
+    {
+        try {
+			Connection a = BDD.getConnection();
+			
+			Statement sus = a.createStatement();
+			ResultSet sus2 = sus.executeQuery("SELECT * FROM client");
+			
+			String sustarace = "";
+			
+			while(sus2.next())
+			{
+				sustarace += sus2.getString("nom") + "\n";
+			}
+			
+			return sustarace;
+		}
+		catch(Exception sus)
+		{
+			return "Got it!" + sus.getMessage();
+		}
+    }
+}

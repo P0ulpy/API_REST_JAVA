@@ -1,0 +1,28 @@
+package api.api_rest.ClientsManagement;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class ClientsManager {
+    
+	public static String getClients()
+	{
+		System.out.println("ça get get")
+
+		Client[] clients = BDD.getClients();
+		
+		System.out.println("ça a fini de get get")
+
+		String jsonString = "[";
+
+		for(Client client : clients)
+		{
+			jsonString += client.toJSONstring();
+		}
+
+		jsonString += "]";
+
+		return jsonString;
+	}
+}

@@ -1,0 +1,27 @@
+package api.api_rest.ClientsManagement;
+
+public class ClientsManager {
+    
+    String a()
+    {
+        try {
+			Connection a = BDD.getConnection();
+			
+			Statement sus = a.createStatement();
+			ResultSet sus2 = sus.executeQuery("SELECT * FROM client");
+			
+			String sustarace = "";
+			
+			while(sus2.next())
+			{
+				sustarace += sus2.getString("nom") + "\n";
+			}
+			
+			return sustarace;
+		}
+		catch(Exception sus)
+		{
+			return "Got it!" + sus.getMessage();
+		}
+    }
+}

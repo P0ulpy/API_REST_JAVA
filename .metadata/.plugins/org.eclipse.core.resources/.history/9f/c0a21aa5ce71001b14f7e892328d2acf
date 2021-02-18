@@ -1,0 +1,15 @@
+package api.api_rest;
+
+@Path("/")
+public class Routes {
+
+    @GET
+    @Path("/clients")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String clients() {
+        
+        return "{a : 10}";
+
+        //Aaa
+    }
+}
