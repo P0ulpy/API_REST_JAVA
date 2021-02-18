@@ -3,6 +3,8 @@ package api.api_rest.ClientsManagement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 public class Client {
 
@@ -17,6 +19,18 @@ public class Client {
         this.nom = resultSet.getString("nom");
         this.prenom = resultSet.getString("prenom");
         this.telephone = resultSet.getString("telephone");
+    }
+
+    Client(
+        @JsonProperty("id") int id, 
+        @JsonProperty("nom") String nom, 
+        @JsonProperty("prenom") String prenom, 
+        @JsonProperty("telephone") String telephone)
+    {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.telephone = telephone;
     }
 
     public String toJSONstring()
