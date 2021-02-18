@@ -55,8 +55,8 @@ public class Routes {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     // recuperer les données du body de la requete
-    public String alterClient(@PathParam("id") int id, Client client) {
-        
+    public String alterClient(@PathParam("id") int id, Client client) 
+    {    
         return ClientsManager.alterClient(id, client);
     }
 }

@@ -39,7 +39,8 @@ public class BDD {
 
     public static List<Client> getClients()
     {
-        try {
+        try 
+        {
 			Connection connection = BDD.getConnection();
 			
 			Statement statement = connection.createStatement();
@@ -63,7 +64,8 @@ public class BDD {
 
     public static Client getClient(int id)
     {
-        try {
+        try 
+        {
 			Connection connection = BDD.getConnection();
 			Statement statement = connection.createStatement();
 			ResultSet result = statement.executeQuery("SELECT * FROM client WHERE id = " + id);
@@ -85,7 +87,8 @@ public class BDD {
 
     public static String deleteClient(int id)
     {
-        try {
+        try 
+        {
 			Connection connection = BDD.getConnection();
             PreparedStatement statement = connection.prepareStatement("DELETE FROM client WHERE id = ?");
             statement.setInt(1, id);
@@ -106,7 +109,8 @@ public class BDD {
 
     public static String addClient(Client client)
     {
-        try {
+        try 
+        {
 			Connection connection = BDD.getConnection();
 			PreparedStatement statement = 
             connection.prepareStatement("INSERT INTO client (id, nom, prenom, telephone) VALUES( IF(? IS NULL, id, ?), IF(? IS NULL, nom, ?), IF(? IS NULL, prenom, ?), IF(? IS NULL, telephone, ?))");
@@ -135,7 +139,8 @@ public class BDD {
 
     public static String alterClient(int id, Client client)
     {
-        try {
+        try 
+        {
 			Connection connection = BDD.getConnection();
 			PreparedStatement statement = 
             connection.prepareStatement("UPDATE client SET nom = IF(? IS NULL, nom, ?), prenom = IF(? IS NULL, prenom, ?), telephone = IF(? IS NULL, telephone, ?) WHERE id = ?");

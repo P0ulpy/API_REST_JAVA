@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "1acab081-6148-427a-b046-df2f04928457",
+		"name": "TP API REST JAVA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Clients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/api_rest/webapi/clients",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api_rest",
+						"webapi",
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Client",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/api_rest/webapi/client/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api_rest",
+						"webapi",
+						"client",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Client",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/api_rest/deleteClient/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api_rest",
+						"deleteClient",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Client",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 21,\r\n    \"nom\" : \"sus\",\r\n    \"prenom\" : \"jean\",\r\n    \"telephone\" : \"0202020202\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api_rest/webapi/addClient",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api_rest",
+						"webapi",
+						"addClient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alter Client",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nom\" : \"nom\",\r\n    \"prenom\" : \"prenom\",\r\n    \"telephone\" : \"0101010101\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api_rest/webapi/alterClient/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api_rest",
+						"webapi",
+						"alterClient",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
